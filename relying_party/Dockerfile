@@ -24,7 +24,7 @@ RUN mkdir -p /tmp/work \
 RUN ln -sf /dev/stdout /var/log/httpd/access_log && ln -sf /dev/stderr /var/log/httpd/error_log
 
 COPY httpd.conf /etc/httpd/conf/httpd.conf
-COPY phpinfo.php /var/www/html/private/phpinfo.php
+COPY index.php /var/www/html/private/index.php
 
 EXPOSE 80
 
