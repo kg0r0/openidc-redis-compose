@@ -17,6 +17,4 @@ services:
       PROXY_ADDRESS_FORWARDING: "true"
   redis:
     image: "redis:alpine"
-    ports:
-      - "6379:6379"
     command: redis-server --appendonly yes --requirepass foobar
