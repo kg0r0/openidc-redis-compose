@@ -6,6 +6,7 @@ services:
       - 80:80
     depends_on:
       - keycloak
+      - redis
   keycloak:
     build: ./keycloak
     ports:
@@ -14,3 +15,8 @@ services:
 #      KEYCLOAK_USER: admin
 #      KEYCLOAK_PASSWORD: password
       PROXY_ADDRESS_FORWARDING: "true"
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --requirepass foobar
